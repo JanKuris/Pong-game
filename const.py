@@ -1,0 +1,21 @@
+#screen
+SCREEN_HEIGHT = 800
+SCREEN_WIDTH = 1200
+BACKGROUND_COLOR = "black"
+#playground 
+BORDER_COLOR = "white"
+LINE_THICK = 8
+DRAW_BORDER = 0
+#player 
+PLAYER_COLOR = "white"
+DRAW_PLAYER = 0
+PLAYER_POSITION = (560, 0)
+#computer
+COMPUTER_COLOR = "white"
+DRAW_COMPUTER = 0
+COMPUTER_POSITION = (-560, 0)
+#ball
+BALL_COLOR = "white"
+DRAW_BALL = 0
+BALL_POSITION = (0,0)
+BALL_SPEED = 1  #  0.6 slowest
