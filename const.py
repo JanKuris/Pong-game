@@ -19,3 +19,7 @@ BALL_COLOR = "white"
 DRAW_BALL = 0
 BALL_POSITION = (0,0)
 BALL_SPEED = 1  #  0.6 slowest
+#score 
+SCORE_POSITION = (-60, 330) 
+SCORE_COLOR = "white"
+DRAW_SCORE  = 0 

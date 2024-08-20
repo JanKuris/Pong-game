@@ -9,7 +9,7 @@ class Playground(Turtle):
         self.pensize(LINE_THICK)
         self.color(BORDER_COLOR)
     
-    def drawing_border(self):
+    def drawing_bounds(self):
         self.penup()
         self.hideturtle()
         self.goto(-SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2 - 5)

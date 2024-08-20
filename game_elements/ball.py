@@ -16,7 +16,6 @@ class Ball(Turtle):
         self.y_move = 10
         self.speed(BALL_SPEED)
 
-
     def move(self):
         new_x = self.xcor() + self.x_move
         new_y = self.ycor() + self.y_move
@@ -26,3 +25,12 @@ class Ball(Turtle):
         self.y_move *= -1 
     def bounce_x(self):
         self.x_move *= -1
+
+    def new_ball(self):
+        self.hideturtle()
+        self.goto(0, 0)
+        self.showturtle()
+        
+    def  level_of_speed(): 
+    #function for encreasing levels 
+        pass

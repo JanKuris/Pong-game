@@ -17,10 +17,10 @@ class PongRacket(Turtle):
         self.shapesize(stretch_wid= 5, stretch_len= 1)
 
     def down(self):
-        new_y =  self.ycor() - 20
+        new_y =  self.ycor() - 30
         self.goto(self.xcor(), new_y)
     def up(self):
-        new_y =  self.ycor() + 20
+        new_y =  self.ycor() + 30
         self.goto(self.xcor(), new_y)
     
     def computer_racket(self):
@@ -30,3 +30,5 @@ class PongRacket(Turtle):
         self.goto(COMPUTER_POSITION)
         self.color(COMPUTER_COLOR)
         self.shapesize(stretch_wid= 5, stretch_len= 1)
+    
+  
