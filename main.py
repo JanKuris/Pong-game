@@ -1,5 +1,5 @@
 from turtle import * 
-from const import * 
+from const import *
 from game_elements.playground import Playground
 from game_elements.rackets import PongRacket
 from game_elements.ball import Ball
@@ -28,13 +28,13 @@ while game_run:
     screen.update()
     ball.move()
 
-     # Computer paddle (paddle B) behavior - follow the ball
+     # Computer racket (racket_2) behavior - follow the ball
     if racket_2.ycor() < ball.ycor() and abs(racket_2.ycor() - ball.ycor()) > 10:
-        racket_2.sety(racket_2.ycor() + 20)
+        racket_2.sety(racket_2.ycor() + C0MPUTER_SPEED)
     elif racket_2.ycor() > ball.ycor() and abs(racket_2.ycor() - ball.ycor()) > 10:
-        racket_2.sety(racket_2.ycor() - 20)
+        racket_2.sety(racket_2.ycor() - C0MPUTER_SPEED)
 
-    #detect colision with ball
+      #detect colision with ball
     if ball.ycor() > SCREEN_HEIGHT / 2 - 20 or ball.ycor() <  -SCREEN_HEIGHT / 2 + 20: 
         ball.bounce_y()
     elif ball.distance(racket_1) < 55 and abs(ball.xcor() - racket_1.xcor()) < 30: 
@@ -42,15 +42,20 @@ while game_run:
     elif ball.distance(racket_2) < 55 and abs(ball.xcor() - racket_2.xcor()) < 30: 
         ball.bounce_x()
     #detect goal
-    if ball.xcor() >= SCREEN_WIDTH / 2:
+    if ball.xcor() >= RIGHT_PART:
         score.set_computer_score()
         screen.update()       
         ball.new_ball()
-    elif ball.xcor() <= -SCREEN_WIDTH / 2: 
+    elif ball.xcor() <= LEFT_PART:
         score.set_player_score()
         screen.update()       
         ball.new_ball()
-    
-
-
-#border limits 
+    #border limits 
+    if racket_1.ycor() > UPPER_PART - 70:
+        racket_1.sety(UPPER_PART - 70)
+    elif racket_1.ycor() < LOWER_PART + 70:
+        racket_1.sety(LOWER_PART + 70)
+    elif racket_2.ycor() > UPPER_PART - 70:
+        racket_2.sety(UPPER_PART - 70)
+    elif racket_2.ycor() < LOWER_PART + 70:
+        racket_2.sety(LOWER_PART + 70)
