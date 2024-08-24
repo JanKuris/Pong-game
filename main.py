@@ -28,14 +28,14 @@ while game_run:
     screen.update()
     ball.move()
 
-     # Computer racket (racket_2) behavior - follow the ball
+    # Computer racket (racket_2) behavior - follow the ball
     if racket_2.ycor() < ball.ycor() and abs(racket_2.ycor() - ball.ycor()) > 10:
-        racket_2.sety(racket_2.ycor() + C0MPUTER_SPEED)
+        racket_2.sety(racket_2.ycor() + COMPUTER_SPEED)
     elif racket_2.ycor() > ball.ycor() and abs(racket_2.ycor() - ball.ycor()) > 10:
-        racket_2.sety(racket_2.ycor() - C0MPUTER_SPEED)
+        racket_2.sety(racket_2.ycor() - COMPUTER_SPEED)
 
-      #detect colision with ball
-    if ball.ycor() > SCREEN_HEIGHT / 2 - 20 or ball.ycor() <  -SCREEN_HEIGHT / 2 + 20: 
+    #detect colision with ball
+    if ball.ycor() > SCREEN_HEIGHT / 2 - BALL_MARGIN or ball.ycor() <  -SCREEN_HEIGHT / 2 + BALL_MARGIN: 
         ball.bounce_y()
     elif ball.distance(racket_1) < 55 and abs(ball.xcor() - racket_1.xcor()) < 30: 
         ball.bounce_x()
@@ -50,6 +50,7 @@ while game_run:
         score.set_player_score()
         screen.update()       
         ball.new_ball()
+
     #border limits 
     if racket_1.ycor() > UPPER_PART - 70:
         racket_1.sety(UPPER_PART - 70)
@@ -59,3 +60,7 @@ while game_run:
         racket_2.sety(UPPER_PART - 70)
     elif racket_2.ycor() < LOWER_PART + 70:
         racket_2.sety(LOWER_PART + 70)
+
+    if score.player_score  == 2 or score.computer_score == 2: 
+        game_run = False
+

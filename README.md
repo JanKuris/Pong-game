@@ -1,0 +1,1 @@
+This program is a simple Pong game developed using Python's Turtle graphics module. The game components, such as the playground, rackets, ball, and score, are implemented in separate files to maintain modularity. The program follows an object-oriented programming approach to organize and manage the various game elements effectively.

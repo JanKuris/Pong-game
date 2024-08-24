@@ -31,6 +31,4 @@ class Ball(Turtle):
         self.goto(0, 0)
         self.showturtle()
         
-    def  level_of_speed(): 
-    #function for encreasing levels 
-        pass
+   
